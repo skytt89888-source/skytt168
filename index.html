@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MT真人互動平台</title>
+  <meta name="description" content="全新的娛樂平台，多種娛樂模式主題" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="MT真人互動平台" />
+  <meta property="og:description" content="全新的娛樂平台，多種娛樂模式主題" />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root { color-scheme: light; }
+    html, body { height: 100%; }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background:#f7f7f9; color:#0f172a; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }
+    .wrap { width:min(92vw,560px); text-align:center; padding:28px 24px; border-radius:20px; border:1px solid #e5e7eb; background:#ffffff; box-shadow:0 10px 30px rgba(15,23,42,.06); }
+    .logo { display:block; margin:0 auto 14px; width:min(240px,70%); height:auto; }
+    h1 { font-size:18px; margin:8px 0 6px; color:#0f172a; }
+    p { margin:0; color:#475569; font-size:14px; }
+    .hint { margin-top:12px; font-size:12px; color:#64748b; }
+    .hint a { color:#2563eb; }
+    .dots::after { content:'…'; display:inline-block; width:1.5em; text-align:left; animation:dots 1.2s steps(4,end) infinite; }
+    @keyframes dots { 0%{content:'';} 25%{content:'.';} 50%{content:'..';} 75%{content:'...';} 100%{content:'';} }
+  </style>
+
+  <!-- Meta Pixel（728358473533000） -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '728358473533000');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=728358473533000&ev=PageView&noscript=1"/></noscript>
+
+  <!-- 備援 meta refresh：JS 關閉時仍會於 3 秒後導向 -->
+  <meta http-equiv="refresh" content="0.5;url=https://ag223.gm89.net/login?id=register" />
+</head>
+<body>
+  <main class="wrap" role="status" aria-live="polite">
+    <img class="logo" src="./da-laoye-logo-300.png" alt="大老爺777 Logo"/>
+    <h1>正在尋找安全路線中<span class="dots" aria-hidden="true"></span></h1>
+    <p>正在為您檢測最佳連線，稍候將自動前往官方平台。</p>
+    <div class="hint">若未自動跳轉，<a id="fallbackLink" href="#">請點此前往</a></div>
+  </main>
+
+  <script>
+    // === 自訂設定 ===
+    const OFFICIAL_URL = 'https://ag223.gm89.net/login?id=register';
+    const DELAY_MS = 500; // 0.5 秒
+
+    // 保留 UTM/追蹤參數（若有）
+    const extra = window.location.search.replace(/^\?/, '');
+    const sep = OFFICIAL_URL.includes('?') ? '&' : '?';
+    const target = extra ? (OFFICIAL_URL + sep + extra) : OFFICIAL_URL;
+
+    // 後備連結
+    document.getElementById('fallbackLink').href = target;
+
+    // 定時跳轉
+    setTimeout(() => {
+      try { fbq('track', 'ViewContent'); } catch (e) {}
+      window.location.replace(target);
+    }, DELAY_MS);
+
+    // 瀏覽器返回時自動前往（避免停留）
+    window.addEventListener('pageshow', (e) => { if (e.persisted) window.location.replace(target); });
+  </script>
+</body>
+</html>
